@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Zen Twitter",
-  "version": "0.2.0",
+  "version": "0.9.0",
   "description": "Disable Twitter vanity metrics, notifications and distractions",
   "icons": {
     "16": "icons/icon_16.png",

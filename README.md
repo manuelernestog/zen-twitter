@@ -1,11 +1,13 @@
 # <img src="public/icons/icon_48.png" width="45" align="left"> Zen Twitter
 
-My Chrome Extension
+Zeen Twitter Chrome Extension
 
 ## Features
 
-- Feature 1
-- Feature 2
+- Hide follower count
+- Hide reactions count
+- Hide notification count
+- Hide trends panel
 
 ## Install
 
