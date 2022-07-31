@@ -3,30 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <title>My Chrome Extension</title>
-    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <div class="app">
-      <p class="counter-label">Counter</p>
-      <div id="counter" class="counter"></div>
-      <div class="button-container">
-        <button id="decrementBtn" class="button">-</button>
-        <button id="incrementBtn" class="button">+</button>
-      </div>
+  <body class="px-5 pt-4 w-[270px]">
+  	<div id="popup-header" class="text-xl font-extrabold flex pb-3 border-solid border-b-[1px]">
+			<div class="shrink-0">
+				<img class="h-8 w-8 mr-3" src="icons/icon_48.png" alt="ChitChat Logo">
+			  </div>
+			<h1>Zen Twitter</h1>
+			<div tabindex="0" class="btn btn-ghost text-info btn-xs btn-circle mx-1 inline-block">
+				<a href="https://twitter.com/" target="_blank">
+					<svg width="20" height="20" fill="none" viewBox="0 0 24 24" class="inline h-5 w-5 stroke-black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+				</a>
+			</div>
+		</div>
+		<div id="popup-body" class="my-3">
+			<div class="form-control">
+				<label class="label cursor-pointer">
+				  <span class="label-text">Hide Followers Count</span> 
+				  <input id="followers" type="checkbox" class="toggle" />
+				</label>
+			  </div>
+			  <div class="form-control">
+				<label class="label cursor-pointer">
+				  <span class="label-text">Hide Reactions Count</span> 
+				  <input id="reactios" type="checkbox" class="toggle" />
+				</label>
+			  </div>
+			  <div class="form-control">
+				<label class="label cursor-pointer">
+				  <span class="label-text">Hide Notifications Count</span> 
+				  <input id="notifications" type="checkbox" class="toggle" />
+				</label>
+			  </div>
+			  <div class="form-control">
+				<label class="label cursor-pointer">
+				  <span class="label-text">Hide Trends Panel</span> 
+				  <input id="trends" type="checkbox" class="toggle" />
+				</label>
+			  </div>
 
-      <hr class="divider" />
+			  <div id="refresh-page" class="form-group text-base-content/70 my-3 mx-1 hidden">
+				Reload Twitter to take effect
+			  </div>
+		</div>
+		<div id="popup-footer" class="py-4 border-solid border-t-[1px] flex">
+			<span class="grow ">	
+				<span class="font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-lightning-charge-fill inline" viewBox="0 0 16 16">
+            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+          </svg>
+          </span> by <a class="link no-underline text-base-content/70 hover:underline" href="https://twitter.com/manuelernestog" target="_blank">@manuelernestog</a>
+			</span>
 
-      <p class="title">Chrome Extension is Ready!</p>
-      <p class="subtitle">Start by updating <code>popup.html</code></p>
-    </div>
+			<span>
+				<a class="link link-primary no-underline hover:underline" href="https://github" target="_blank">
+				Share  
+					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-twitter inline mb-1" viewBox="0 0 16 16">
+						<path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+					  </svg>
+					</a>
+			</span>
+		</div>
 
     <script src="popup.js"></script>
-
-    <!--
-      This HTML file opens when you click on icon from the toolbar.
-
-      To begin the development, run `npm run watch`.
-      To create a production bundle, use `npm run build`.
-    -->
   </body>
 </html>

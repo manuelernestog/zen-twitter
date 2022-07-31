@@ -1,43 +1,33 @@
 'use strict';
 
-// Content script file will run in the context of web page.
-// With content script you can manipulate the web pages using
-// Document Object Model (DOM).
-// You can also pass information to the parent extension.
+var tag = document.createElement("style");
 
-// We execute this script by making an entry in manifest.json file
-// under `content_scripts` property
-
-// For more information on Content Scripts,
-// See https://developer.chrome.com/extensions/content_scripts
-
-// Log `title` of current active web page
-const pageTitle = document.head.getElementsByTagName('title')[0].innerHTML;
-console.log(
-  `Page title is: '${pageTitle}' - evaluated by Chrome extension's 'contentScript.js' file`
-);
-
-// Communicate with background file by sending a message
-chrome.runtime.sendMessage(
-  {
-    type: 'GREETINGS',
-    payload: {
-      message: 'Hello, my name is Con. I am from ContentScript.',
-    },
-  },
-  (response) => {
-    console.log(response.message);
+chrome.storage.local.get("followers", (result) => {
+  if (result.followers) {
+    var text = document.createTextNode(".r-nsbfu8 > div:nth-child(4), .css-1dbjc4n > .r-1ifxtd0 > div:nth-child(5){ display: none;}");
+    tag.appendChild(text);
   }
-);
-
-// Listen for message
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'COUNT') {
-    console.log(`Current count is ${request.payload.count}`);
-  }
-
-  // Send an empty response
-  // See https://github.com/mozilla/webextension-polyfill/issues/130#issuecomment-531531890
-  sendResponse({});
-  return true;
 });
+
+chrome.storage.local.get("reactios", (result) => {
+  if (result.reactios) {
+    var text = document.createTextNode(".r-1k6nrdp {display: none;}");
+    tag.appendChild(text);
+  }
+});
+
+chrome.storage.local.get("notifications", (result) => {
+    if (result.notifications) {
+      var text = document.createTextNode(".r-i61hcz, .r-1qcuhsn, .r-1m4drjs {display: none;}");
+      tag.appendChild(text);
+    }
+});
+
+chrome.storage.local.get("trends", (result) => {
+    if (result.trends) {
+      var text = document.createTextNode(".r-vacyoi > div:nth-child(3) {display: none;}");
+      tag.appendChild(text);
+    }
+});
+
+document.body.appendChild(tag);
