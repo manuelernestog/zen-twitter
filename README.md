@@ -20,7 +20,7 @@ npm install
 npm run watch
 ```
 
-Then follow these instructions to see your extension:
+Then follow these instructions to see in browser:
 1. Open **chrome://extensions**
 2. Check the **Developer mode** checkbox
 3. Click on the **Load unpacked extension** button
