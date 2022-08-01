@@ -17,7 +17,11 @@ Zeen Twitter - Hide Twitter vanity metrics, notifications and distractions
 
 ```sh
 npm install
-npm run watch
+# for build
+npm run build 
+# for development
+npm run watch 
+npx tailwindcss -i ./src/popup.css -o ./public/output.css --watch # for build tailwindcss 
 ```
 
 Then follow these instructions to see in browser:
