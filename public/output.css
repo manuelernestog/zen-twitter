@@ -2427,6 +2427,10 @@ body[dir="rtl"] .checkbox:checked,
   width: 1.25rem;
 }
 
+.w-\[280px\] {
+  width: 280px;
+}
+
 .shrink-0 {
   flex-shrink: 0;
 }

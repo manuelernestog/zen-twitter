@@ -25,9 +25,19 @@ chrome.storage.local.get("notifications", (result) => {
 
 chrome.storage.local.get("trends", (result) => {
     if (result.trends) {
-      var text = document.createTextNode(".r-vacyoi > div:nth-child(3) {display: none;}");
+      var text = document.createTextNode(".r-vacyoi section[role='region'] {display: none;}");
       tag.appendChild(text);
     }
 });
 
+chrome.storage.local.get("dm_box", (result) => {
+  if (result.dm_box) {
+    var text = document.createTextNode("div[data-testid='DMDrawer'] {display: none;}");
+    tag.appendChild(text);
+  }
+});
+
 document.body.appendChild(tag);
+
+
+
