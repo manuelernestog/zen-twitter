@@ -1,6 +1,6 @@
 # <img src="public/icons/icon_48.png" width="45" align="left"> Zen Twitter
 
-Zeen Twitter - Hide Twitter vanity metrics, notifications and distractions
+Zen Twitter - Hide Twitter vanity metrics, notifications and distractions
 
 ## Features
 
